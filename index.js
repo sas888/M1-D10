@@ -97,7 +97,7 @@ Write a function called dice; it should randomize an integer number between 1 an
 
 */
 
-let dice = function (start, range) {
+const dice = function (start, range) {
   return Math.floor(Math.random(start) * range) + 1;
 };
 
@@ -109,6 +109,10 @@ Write a function called whoIsBigger which receives 2 numbers as parameters and r
 
 */
 
+const whoIsBigger = (num1, num2) => (num1 > num2 ? num1 : num2);
+
+console.log(whoIsBigger(10, 50));
+
 /* EXERCISE 3
 
 Write a function called splitMe which receives a string as a parameter and returns an array with every word in that string.
@@ -116,6 +120,9 @@ Write a function called splitMe which receives a string as a parameter and retur
 Ex.: splitMe("I love coding") => returns ["I", "Love", "Coding"]
 
 */
+const splitMe = (str) => str.split(" ");
+
+console.log(splitMe("I Love Coding"));
 
 /* EXERCISE 4
 
@@ -125,6 +132,21 @@ If the boolean value is true it should return the string without the first lette
 
 */
 
+const deleteOne = function (string, boolean) {
+  if (boolean === true) {
+    return string.substring(1);
+  } else {
+    return string.slice(0, -1);
+  }
+};
+
+console.log(deleteOne("test", false));
+
+const deleteOneTest = (string, boolean) =>
+  boolean === true ? string.slice(1) : string.substr(0, -1);
+
+console.log(deleteOneTest("hello", true));
+
 /* EXERCISE 5
 
 Write a function called onlyLetters which receives a string as a parameter and returns it removing all the digits.
@@ -133,17 +155,45 @@ Ex.: onlyLetters("I have 4 dogs") => returns "I have dogs"
 
 */
 
+const onlyLetters = (str) => str.replace(/\d+(\s+)/g, "");
+
+console.log(onlyLetters("I have 4 dogs, 2 cats and 1 hamster"));
+
 /* EXERCISE 6
 
 Write a function called isThisAnEmail which receives a string as a parameter and returns true if the string is a valid email address.
 
 */
 
+const isThisAnEmail = (str) =>
+  str.match("@") ? "valid email address" : "invalid email address";
+
+console.log(isThisAnEmail("hello@domain.com"));
+
 /* EXERCISE 7
 
-Write a function called whatDayIsIt that should return the current day of the week.
+Write a function called whatDayIsIt
+
+ that should return the current day of the week.
 
 */
+
+const whatDayIsIt = function () {
+  let weekday = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = new Date();
+
+  return weekday[day.getDay()];
+};
+
+console.log(whatDayIsIt());
 
 /* EXERCISE 8
 
@@ -176,6 +226,18 @@ Write a function called howManyDays which receives a date as a parameter and ret
 Write a function called isTodayMyBirthday which should return true if today’s your birthday, false otherwise.
 
 */
+
+// const isTodayMyBirthday = () => {
+//   const today = new Date();
+//   let myBDay = 1;
+//   let myBMonth = 7;
+//   return (
+//     myBDay.getDate() === today.getDate() &&
+//     myBMonth.getMonth() === today.getMonth()
+//   );
+// };
+
+// console.log(isTodayMyBirthday());
 
 // JS Arrays & Objects
 
