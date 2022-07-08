@@ -221,6 +221,17 @@ Write a function called howManyDays which receives a date as a parameter and ret
 
 */
 
+const howManyDays = function getDays(firstDate, secondDate) {
+  const date1 = new Date(firstDate);
+  const date2 = new Date(secondDate);
+  const oneDay = 1000 * 60 * 60 * 24;
+  const dTime = date2.getTime() - date1.getTime();
+  const dDays = Math.round(dTime / oneDay);
+  return dDays;
+};
+
+console.log(howManyDays("07/05/2022", "07/08/2022"));
+
 /* EXERCISE 10
 
 Write a function called isTodayMyBirthday which should return true if today’s your birthday, false otherwise.
