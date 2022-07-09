@@ -215,6 +215,20 @@ values: [3, 3, 4]
 
 */
 
+const rollTheDices = function (num) {
+  let diceResults = {
+    sum: 0,
+    values: [],
+  };
+  for (let i = 0; i < num; i++) {
+    let diceRoll = dice(1, 6);
+    diceResults.sum += diceRoll;
+    diceResults.values.push(diceRoll);
+  }
+  return diceResults;
+};
+console.log(rollTheDices(3));
+
 /* EXERCISE 9
 
 Write a function called howManyDays which receives a date as a parameter and returns the number of days passed since that date.
@@ -237,18 +251,6 @@ console.log(howManyDays("07/05/2022", "07/08/2022"));
 Write a function called isTodayMyBirthday which should return true if today’s your birthday, false otherwise.
 
 */
-
-// const isTodayMyBirthday = () => {
-//   const today = new Date();
-//   let myBDay = 1;
-//   let myBMonth = 7;
-//   return (
-//     myBDay.getDate() === today.getDate() &&
-//     myBMonth.getMonth() === today.getMonth()
-//   );
-// };
-
-// console.log(isTodayMyBirthday());
 
 // JS Arrays & Objects
 
